@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         eMailField = binding.etEmail
 
         binding.buttonSave.setOnClickListener(this)
-        binding.buttonClear.setOnClickListener(this)
+       // binding.buttonClear.setOnClickListener(this)
 
     }
 
@@ -39,29 +39,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     isAllFieldsChecked = confirmation()
                     return
                 }
-                R.id.buttonClear -> {
-                    clearData()
-
-                }
-
             }
         }
     }
 
-    // this function cleans all input data
-    private fun clearData() {
-        binding.etEmail.text = null
-        binding.etFirstName.text = null
-        binding.etLastName.text = null
-        binding.etAge.text = null
 
-    }
-
-    // Function checks all the fields
-    // are filled or not by the user.
-    // also Here are the results
-    // from validateUserName() and
-    // validateEmailAddress() functions
 
     private fun confirmation(): Boolean {
         validateEmailAddress(eMailField)
@@ -91,10 +73,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         }
 
-        val intent = Intent(this,MainActivity2::class.java)
+        transferData()
 
-        startActivity(intent)
-        finish()
+
         return true
 
     }
@@ -116,6 +97,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             //Toast.makeText(this, "Email is not valid!", Toast.LENGTH_SHORT).show()
 
         }
+    }
+
+    private fun transferData(){
+
+        val intent = Intent(this,MainActivity2::class.java)
+        intent.putExtra(Constants.EMAIL,binding.etEmail.text.toString())
+        intent.putExtra(Constants.FIRST_NAME,binding.etFirstName.text.toString())
+        intent.putExtra(Constants.LAST_NAME,binding.etLastName.text.toString())
+        intent.putExtra(Constants.AGE,binding.etAge.text.toString())
+
+        startActivity(intent)
+        finish()
+
     }
 
 
