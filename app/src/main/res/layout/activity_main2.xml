@@ -3,40 +3,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".MainActivity2"
-    android:layout_margin="20dp">
+    android:background="@drawable/background_light"
+    android:scaleType="centerCrop"
+    tools:context=".MainActivity2">
 
-    <TextView
-        android:id="@+id/tvEmail"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/tvFirstNAme"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/tvLastName"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/tvAge"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonClear"
-        android:layout_gravity="center"
-        style="@style/Button.Solid"
-        android:layout_width="180dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvUserInfo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/clear" />
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white"
+        android:layout_margin="40dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp">
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvEmail"
+                style="@style/Text"
+                android:textColor="@color/purple_500"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvFirstNAme"
+                style="@style/Text"
+                android:textColor="@color/purple_500"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvLastName"
+                style="@style/Text"
+                android:textColor="@color/purple_700"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvAge"
+                style="@style/Text"
+                android:textColor="@color/purple_700"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvInfo"
+        android:layout_gravity="center"
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_margin="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_no_user_added_yet"
+        android:visibility="gone"
+        />
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonClear"
+            android:layout_gravity="center"
+            style="@style/Button.Solid"
+            android:layout_width="180dp"
+            android:layout_marginTop="180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/clear" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonUpdate"
+            android:layout_gravity="center"
+            style="@style/Button.Solid"
+            android:layout_width="180dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content"
+            android:text="@string/update_user" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -9,4 +9,10 @@
     <string name="age">Age</string>
     <string name="save">Add User</string>
     <string name="clear">Remove User</string>
+    <string name="err_msg_required_fields">This field is required</string>
+    <string name="err_msg_invalid_email">Enter valid Email address</string>
+    <string name="update_user">update user</string>
+    <string name="lbl_update_dish">update</string>
+    <string name="msg_success">User successfully added!</string>
+    <string name="label_no_user_added_yet">no user added yet</string>
 </resources>
